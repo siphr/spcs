@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from pprint import pprint
-import getopt
+import argparse
 import requests
 import sys
 
@@ -52,18 +52,13 @@ def check_complaint(complaint_number):
             else:
                 break
 
-def show_help_and_exit():
-            print('Usage: spcs <complaint_number>')
-            sys.exit(0)
 
 
 if __name__ == '__main__':
 
-    opts, args = getopt.getopt(sys.argv[1:], 'h',['help'])
-    if len(opts) < 1: show_help_and_exit()
+    parser = argparse.ArgumentParser(description=' Pakistan Sind Police complaint status.')
+    parser.add_argument('-c', '--complaint', required=True, help='Complaint number or ID of the complaint to check.')
+    a = parser.parse_args()
 
-    for opt in opts:
-        if opt[0] in ['-h', '', '--help']:
-            show_help_and_exit()
-    complaint_number=sys.argv[1]
-    check_complaint(complaint_number)
+    check_complaint(a.complaint)
+
