@@ -1,0 +1,12 @@
+pkgbase = spcs
+	pkgdesc = Sindh Police Complaints Status.
+	pkgver = 0.0
+	pkgrel = 1
+	url = https://www.techtum.dev/work-pyfrx-220105.html
+	arch = x86_64
+	license = MIT
+	depends = python
+	source = https://github.com/siphr/pyfrx.git
+	md5sums = SKIP
+
+pkgname = pyfrx

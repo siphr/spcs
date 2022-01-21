@@ -52,15 +52,18 @@ def check_complaint(complaint_number):
             else:
                 break
 
+def show_help_and_exit():
+            print('Usage: spcs <complaint_number>')
+            sys.exit(0)
+
 
 if __name__ == '__main__':
 
     opts, args = getopt.getopt(sys.argv[1:], 'h',['help'])
-    import ipdb; ipdb.set_trace();
+    if len(opts) < 1: show_help_and_exit()
+
     for opt in opts:
         if opt[0] in ['-h', '', '--help']:
-            print('Usage: spcs <complaint_number>')
-            print('Example Output: {}'.format(get(2)))
-            sys.exit(0)
+            show_help_and_exit()
     complaint_number=sys.argv[1]
     check_complaint(complaint_number)
