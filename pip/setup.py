@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="spcs",
-    version="0.0.1",
+    version="0.0.7",
     keywords=["pakistan", "sindh", "police", "complaint", "query", "search"],
 
     description="Pakistan Sindh Police complaint status check.",
